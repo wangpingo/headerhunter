@@ -1,0 +1,100 @@
+// gray-color
+$gray-darker=            l-adjust(#000, 13.5%); // #222
+$gray-dark=              l-adjust(#000, 20%);   // #333
+$gray=                   l-adjust(#000, 33.5%); // #555
+$gray-light=             l-adjust(#000, 46.7%); // #777
+$gray-lighter=           l-adjust(#000, 93.5%); // #eee
+$gray-lightest =         #f2f2f2;
+
+//主色调
+$div-color=#ffffff;
+$div-red=#c62623;
+$div-detail=#f9f9f9;
+
+
+//font-color
+$font-gray = #ccc;
+$font-login = #949da9; //登录框header的字体颜色
+$font-login-input = #d8dce2;
+$font-blue =  #667592;
+$font-spec = #485881;
+$font-inRedColor=#fffafa;
+$font-color=#333333;
+
+
+$link-color = #3498db;
+
+// button color
+$button-disable = #d8dce2;
+$button-active = #d9281c;
+
+// border color
+$border-default=#dc3b30;
+$border-blue = #44c0fe;
+$border-hover = #d9281c;
+$border-line = #d4d4d4;
+
+// background color
+$background = #fafafa;
+
+
+//font-size;
+$fontsize-base =  12px;
+$fontsize-normal = 14px;
+$fontsize-big = 16px;
+$fontsize-bigger = 20px;
+
+
+
+
+
+//function
+$clearfix = {
+  zoom:1;
+&:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
+}
+//全屏显示
+$full = {position:absolute;top:0;left:0;width:100%;height:100%;}
+
+
+
+// transiton
+// brand color
+$brand-default =         #7a868a;
+$brand-primary =         #3498db;  //主色调
+$brand-secondary =       #5cb85c;  //主色调
+$brand-inverse =         #e878b2;
+$brand-success =         #5cb85c;
+$brand-info =            #5bc0de;
+$brand-warning =         #f0ad4e;
+$brand-danger =          #d9534f;
+$brand-error =          #d9534f;
+$brand-light =          #eee;
+$brand-lighter =          white;
+
+$brand-default-hover = #959ea1;
+$brand-primary-hover = #5dade2;
+$brand-secondary-hover = #7dc67d;
+$brand-light-hover = #e2e2e2;
+$brand-lighter-hover = #fafafa;
+
+
+
+$brand-secondary =       #5cb85c;  //主色调
+$border-radius-base =        4px;
+
+// Dimension
+$media-xs-max-width =                   480px - 1;
+$media-sm-max-width =                   768px - 1;
+$media-md-max-width =                   960px - 1;
+$media-lg-max-width =                   1220px - 1;
+
+
+// 头部导航配色
+$header-bgcolor = #D02928;
+$nav-bgcolor-hover = #EAE7E7;
+
+//驳回背景色
+$reject-bgcolor = #fff7f6;
+$reject-font-color = #ff7d7d;
+$reject-border-color = #ff9999;

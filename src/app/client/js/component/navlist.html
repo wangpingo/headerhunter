@@ -1,0 +1,8 @@
+
+<ul class="m-nav-slide f-cb">
+    {#list firstNavList as firstNav}
+    <li on-click={this.changeFirstDetail(firstNav.id)} class={selectedFirstIndex==firstNav_index?'z-crt':''}>
+        <span>{firstNav.name}</span>
+    </li>
+    {/list}
+</ul>

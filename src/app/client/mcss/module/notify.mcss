@@ -1,0 +1,172 @@
+// Name:            Notify
+// Description:     通知
+// Author:          sensen(rainforest92@126.com)
+// ========================================================================
+
+
+
+// Variables
+// ========================================================================
+
+$m-notify_z-index = 1040;
+$m-notify_position = 10px;
+$m-notify_width = 320px;
+
+
+
+// Component:       `m-notify`
+// ========================================================================
+
+.m-notify {
+    $box-sizing: border-box;
+    position: fixed;
+
+    z-index: $m-notify_z-index;
+    top: $m-notify_position;
+    left: $m-notify_position;
+    width: $m-notify_width;
+
+    .notify_message {
+        $clearfix();
+
+        .notify_close {
+            float: right;
+
+            &:hover {}
+        }
+
+        .notify_text {
+            float: left;
+
+            .u-icon {
+                font-size: 20px;
+                vertical-align: middle;
+                margin-top: -2px;
+                line-height: 1;
+            }
+        }
+    }
+}
+
+
+
+// Position Extend:
+// Description:     位置扩展
+// ========================================================================
+
+.m-notify-topright,
+.m-notify-bottomright  {
+    left: auto;
+    right: $m-notify_position;
+}
+
+.m-notify-topcenter,
+.m-notify-bottomcenter {
+    left: 50%;
+    margin-left: ($m-notify_width / -2);
+}
+
+.m-notify-bottomleft,
+.m-notify-bottomright,
+.m-notify-bottomcenter {
+    top: auto;
+    bottom: $m-notify_position;
+}
+
+/* Responsive */
+@media (max-width: $media-sm-max-width) {
+    // - Fit in small screen
+    .m-notify {
+        left: $m-notify_position;
+        right: $m-notify_position;
+        width: auto;
+        margin: 0;
+    }
+}
+
+/* Static */
+.m-notify-static {
+    position: static;
+    width: auto;
+}
+
+
+
+// Color Extend:
+// Description:     颜色扩展
+// ========================================================================
+
+$m-notify_message-extend_color = ($name, $background, $color) {
+    .m-notify {
+        .notify_message-#{$name} {
+            background: $background;
+            @if($color) {
+                color: $color;
+                .notify_close {
+                    color: fade($color, 0.75, true);
+                    &:hover {
+                        color: $color;
+                    }
+                }
+            }
+            $border: l-adjust($color, 10%);
+        }
+    }
+}
+
+
+// Variables
+// ========================================================================
+
+$m-notify_message_color = white;
+
+
+
+// Component:       `m-notify`
+// ========================================================================
+
+.m-notify {
+    .notify_message {
+        padding: 12px 15px;
+        margin-bottom: 10px;
+        background: $brand-secondary;
+        color: $m-notify_message_color;
+        $border-radius: $border-radius-base;
+
+        .notify_close {
+            line-height: 1.2;
+            
+            color: fade($m-notify_message_color, 0.75, true);
+            &:hover {
+                color: $m-notify_message_color;
+            }
+        }
+    }
+}
+
+
+
+// Color Extends:       `m-notify_message-info`, `m-notify_message-success`, `m-notify_message-warning`, `m-notify_message-error`
+// ========================================================================
+
+$m-notify_message-extend_color = ($name, $background, $color) {
+    .m-notify {
+        .notify_message-#{$name} {
+            background: $background;
+            @if($color) {
+                color: $color;
+                .notify_close {
+                    color: fade($color, 0.75, true);
+                    &:hover {
+                        color: $color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+$m-notify_message-extend_color(info, $brand-primary);
+$m-notify_message-extend_color(success, $brand-success);
+$m-notify_message-extend_color(warning, $brand-warning);
+$m-notify_message-extend_color(error, $brand-error);

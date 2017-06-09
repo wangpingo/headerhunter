@@ -1,0 +1,172 @@
+.m-detail{
+  width:100%;
+  height:600px;
+  font-family:PingFang-SC-Light;
+  $fontsize-normal = 14px;
+  p{
+      line-height:22px;
+  }
+  .detail-dec{
+      background:#f8f8f8;
+      padding:24px 0px 0px 33px;
+  }
+  .detail-req{
+    background:#f8f8f8;
+    padding:24px 0px 0px 33px;
+  }
+  .dec-header,.req-header{
+      width:65px;
+      height:20px;
+      display:inline-block;
+      color:$div-red;
+      font-weight:bold;
+      font-size:14px;
+      line-height:14px;
+      margin-bottom:10px;
+      letter-spacing:2px;
+  }
+  .deatil-footer{
+      background:#f8f8f8;
+      position:relative;
+      padding:33px;
+      height:50px;
+      .button{
+          position:relative;
+          top:4px;
+          display:inline-block;
+          height:26px;
+          width:80px;
+          background:$div-red;
+          color:$font-inRedColor;
+          padding:8px 23px 6px 23px;
+          vertical-align:bottom;
+          font-size:17px;
+          text-align:center;
+          line-height:22px;
+      }
+      .footer-mail{
+          float:right;
+          width:800px;
+          height:40px;
+          padding:5px 0px 5px 39px;
+          border-left:1px solid $border-line;
+          .mail-title{
+              display:inline-block;
+              height:40px;
+              vertical-align:top;
+              line-height:20px;
+          }
+          .mail-person{
+              display:inline-block;
+              height:40px;
+              margin-left:10px;
+              vertical-align:bottom;
+              line-height:20px;
+          }
+      }
+  }
+  .detail-main{
+    width:1080px;
+    margin:0 auto;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,0.06);
+  }
+  .detail{
+    margin:30px auto 0px;
+    padding-top:20px;
+    width:1080px;
+    height:169px;
+    background:$div-color;
+    .position-content{
+        width:1080px;
+        height:405px;
+        background:$div-detail;
+    }
+    .position-item{
+        width:1000px;
+        height:60px;
+        padding:22px 0px 12px 32px;
+        display:flex;
+        flex-flow:row;
+        .icon{
+            position:relative;
+            width:12px;
+            height:12px;
+            display:inline-block;
+            background-image:url('../img/1.png');
+            background-position:12px 12px;
+            vertical-align:center;
+            .icon-content{
+                position:absolute;
+                background-image:url('../img/2.png');
+                width:252px;
+                height:28px;
+                left: -8px;
+                bottom: 13px;
+                padding-left:10px;
+            }
+        }
+        a{
+            cursor:default
+        }
+        .line{
+            position:relative;
+            left:-37px;
+            margin:auto 0;
+            display:block;
+            border-left:1px solid #dddddd;
+            width:1px;
+            height:20px;
+        }
+        .normal{
+            display:inline-block;
+            flex:1;
+            font-size:$fontsize-base;
+            color:#888888;
+            line-height:28px;
+            float:left;
+            .bgFont{
+                font-size:$fontsize-big;
+                color:#525252;
+            }
+        }
+        .last{
+            width:240px;
+            line-height:28px;
+            font-size:$fontsize-base;
+            flex:none;
+            color:#888;
+            .bgFont{
+                font-size:$fontsize-big;
+                color:#525252;
+            }
+        }
+    }
+    .position-name{
+        display:inline-block;
+        padding:7px 35px 7px 39px;
+        position:relative;
+        left:-5px;
+        height:30px;
+        background:$div-red;
+        line-height:30px;
+        font-size:$fontsize-bigger;
+        color:$font-inRedColor;
+        .triangle{
+            position:absolute;
+            left: 0px;
+            bottom: -10px;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 0px solid transparent;
+            border-top: 10px solid #7A0502;
+        }
+    }
+  }
+}
+.show{
+    box-shadow:0 2px 4px 0 rgba(121,4,1,0.16);
+    display: inline-block;
+    background:$div-red;
+    border-radius:0px 4px 4px 0px;
+}

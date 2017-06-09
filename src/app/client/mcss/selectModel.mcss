@@ -1,0 +1,102 @@
+.s-m-header{
+    position:relative;
+    .h-inp{
+        display:block;
+        width:100%;
+        height:40px;
+        text-indent:10px;
+        font-size:14px;
+        border:1px solid #d4d4d4;
+        border-radius:4px;
+    }
+    .h-search{
+        position:absolute;
+        right:0;
+        top:0px;
+        width:160px;
+        height:40px;
+        background:$div-red;
+        color:$font-inRedColor;
+        font-size:18px;
+        text-align:center;
+        line-height:40px;
+        border-radius:0 4px 4px 0;
+        cursor:pointer;
+    }
+}
+.s-m-content{
+    margin-top:30px;
+    .con-head{
+        border: 1px solid  #d4d4d4;
+        width:798px;
+        height:40px;
+        border-top:0;
+        background:#eeeeee;
+        span{
+            display:inline-block;
+            height:40px;
+            line-height:40px;
+            font-size:14px;
+            float:left;
+            text-align:left;
+            &.span85{
+                width:85px;
+                &.mar{
+                    margin-left:30px;
+                }
+            }
+            &.span130{
+                width:130px;
+            }
+            &.span200{
+                width:200px;
+            }
+            &.span270{
+                width:268px;
+            }
+        }
+    }
+    .con-li{
+
+        border: 1px solid  #d4d4d4;
+        border-top:0;
+        height:50px;
+        line-height:50px;
+        font-size:14px;
+        float:left;
+        text-align:left;
+        cursor:pointer;
+        span{
+            display:inline-block;
+            height:50px;
+            line-height:50px;
+            font-size:14px;
+            float:left;
+            text-align:left;
+            &.span85{
+                width:85px;
+                &.mar{
+                    margin-left:30px;
+                }
+            }
+            &.span130{
+                width:130px;
+            }
+            &.span200{
+                width:200px;
+            }
+            &.span270{
+                width:268px;
+            }
+        }
+        &:hover{
+            background:#fff9f9;
+            color:#c62623;;
+        }
+    }
+    .blank{
+        width:100%;
+        height:30px;
+    }
+
+}

@@ -1,0 +1,55 @@
+<div class="m-detail">
+    <div class="detail f-cb">
+        <div style="display: inline-block;">
+            <div class="position-name">
+                {detail.positionName}
+                <div class="triangle"></div>
+            </div>
+        </div>
+        <div class="position-item">
+            <span class="normal">职位类别<br><a class="bgFont">{detail.positionTypeName}</a></span><a class="line"></a>
+            <span class="normal">工作地点<br><a class="bgFont">{detail.workPlaceName}</a></span><a class="line"></a>
+            <span class="normal">工作年限<br><a class="bgFont">{detail.workYearsName}</a></span><a class="line"></a>
+            <span class="normal">最低学历<br><a class="bgFont">{detail.topDegreeName}</a></span><a class="line"></a>
+            <span class="normal">招聘人数<br><a class="bgFont">{detail.hireNum}</a></span><a class="line"></a>
+            <span class="normal">暂定级别&nbsp;
+                <i class="icon f-pr" on-mouseover={this.showIcon(true)} on-mouseout={this.showIcon(fasle)}>
+                    <div class="icon-content" r-hide={!show}>
+                        仅作推荐参考，与候选人最终offer定级无关
+                    </div>
+                </i><br>
+                <a class="bgFont">{detail.level}</a>
+            </span><a class="line"></a>
+            <span class="last">HR意向<br><a class="bgFont" >{detail.HRWill}</a></span>
+        </div>
+
+        <div class="position-detail">
+            <div class="detail-dec">
+                <span class="dec-header">岗位描述</span>
+                <p r-html={detail.positionDsc}>
+
+                </p>
+            </div>
+
+            <div class="detail-req">
+                <span class="req-header">岗位要求</span>
+                <p r-html={detail.positionReq}>
+
+                </p>
+            </div>
+            <div class="deatil-footer ">
+                    <span class="button" on-click={this.submit()}>
+                        我要推荐
+                    </span>
+                <div class="footer-mail .f-cb">
+                    <span class="mail-title">招聘负责人:</span>
+                    <span class="mail-person">
+                        {#list detail.postionUserNameList as item}
+                            {item.name} | {item.email}<br>
+                        {/list}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

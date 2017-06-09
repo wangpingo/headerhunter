@@ -1,0 +1,27 @@
+<div class="m-schbar" ref="searchBar">
+    <div class="m-sch">
+        <input type="text" placeholder="搜索姓名" r-model={appName} id="j-searchName" on-keydown={this.__searchByAppName($event)} class="u-ipt" /><button class="u-btn-search" on-click={this.__searchByAppName()}>搜索</button>
+    </div>
+    <div class="m-sch">
+        <label>简历来源：</label>
+        <div class="searchVals">
+            <ul class="schOptions" attr="resumeFrom" on-click="{this.__clickSearch($event,'resumeFrom', 0)}">
+                <li data-id="" r-class="{{selected: !resumeFrom}}">不限</li>
+                {#list resourceList as aList}
+                <li data-id="{aList.id}" r-class="{{selected: resumeFrom == aList.id}}">{aList.name}</li>
+                {/list}
+            </ul>
+        </div>
+    </div>
+    <div class="m-sch positionType">
+        <label>职位类别：</label>
+        <div class="searchVals">
+            <ul class="schOptions" attr="postType" on-click={this.__clickSearch($event, "postType",0)}>
+            <li data-id="" class="{postType? '':'selected'}">不限</li>
+            {#list postTypes as aList}
+            <li data-id={aList.id} class="{postType == aList.id ? 'selected':''}">{aList.name}</li>
+            {/list}
+            </ul>
+        </div>
+    </div>
+</div>

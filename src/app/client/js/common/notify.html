@@ -1,0 +1,7 @@
+<div class="m-notify m-notify-{@(position)} {@(class)}">
+    {#list messages as message}
+    <div class="notify_message notify_message-{@(message.type)}" r-animation='on: enter; class: animated fadeIn fast; on: leave; class: animated fadeOut fast;'>
+        <div class="notify_text">{@(message.text)}</div>
+    </div>
+    {/list}
+</div>

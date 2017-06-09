@@ -1,0 +1,38 @@
+<div class="g-hd" ref="app">
+	<div class="m-hd">
+		<div class="header-logo f-ib ">
+			<a href="#/home"><img src="./entry/img/hunter.png" alt="" height="40px"></a>
+		</div>
+        {#if user}
+		<div class="header-cells f-ib ">
+			<ul class="m-nav-top f-cb">
+				{#list navs as x}
+				<li class="f-ib">
+					<a href="{x.url}" r-class={{'z-crt':this.isSelected(x.match)}}  on-click={this.onSelected(x_index)}>{x.name}</a>
+				</li>
+				{/list}
+			</ul>
+		</div>
+		<div class="login-right f-ib f-fr">
+		<div class="login-right-div">
+			<i class="user-name"></i>
+			<span class="username-span">{user}</span>|
+			<span class="pointer-span" on-click="{this.changePwd()}">修改密码</span>|
+			<span class="pointer-span" on-click="{this.logout()}"><span>退出</span><i class="user-exit"></i></span></div>
+		</div>
+		{/if}
+	</div>
+
+</div>
+
+<div class="g-mnc " r-class={{'g-mnc-1':this.$state.current.name=='app.home.index'}} ref=view>
+
+</div>
+
+<div class="g-ft">
+	<div class="footer_links">
+		<div class="copyright">
+			©1997-{newYear}网易公司版权所有
+		</div>
+	</div>
+</div>

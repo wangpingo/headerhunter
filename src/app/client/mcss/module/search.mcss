@@ -1,0 +1,214 @@
+.m-schbar .m-sch,.m-schbar .m-sch .selectedSearch,.schOptions{
+	zoom:1;
+}
+.m-schbar .m-sch:after,.m-schbar .m-sch .selectedSearch:after,.schOptions:after{
+	display:block;
+	clear:both;
+	visibility:hidden;
+	height:0;
+	overflow:hidden;
+	content:".";
+}
+.m-schbar{
+	margin:40px 0;
+	border:1px solid #ddd;
+	background-color:#fcfcfc;
+	box-shadow:0 1px 1px 0px rgba(0,0,0,0.2),0 1px 3px 1px rgba(0,0,0,0.1);
+}
+.m-schbar.navSearchBar{
+	margin:0;
+}
+.m-schbar.navSearchBar .search-btn{
+	padding:0 15px;
+	width:100px;
+}
+.m-schbar.navSearchBar .search-btn:disabled:after{
+	content:"中...";
+}
+.m-schbar .selectArea{
+	border-top:1px solid #ddd;
+	position:relative;
+	overflow:hidden;
+	top:1px;
+}
+.m-schbar .selectArea .m-sch:first-child{
+	border-bottom:1px dashed #dadada;
+}
+.m-schbar .m-sch{
+	border-bottom:1px dashed #dadada;
+	padding:8px 30px;
+}
+.m-schbar .m-sch.u-schbar >input,.m-schbar .m-sch.u-schbar >select,.m-schbar .m-sch.u-schbar >button{
+	float:left;
+	margin-right:-1px;
+}
+.m-schbar .m-sch.u-schbar >select{
+	height:28px;
+	line-height:28px;
+}
+.m-schbar .m-sch:first-child{
+	border-bottom-style:solid;
+}
+.m-schbar .m-sch.firstChild{
+	border-bottom:none;
+	background:#fff;
+	padding-bottom:0;
+}
+.m-schbar .m-sch.firstChild label{
+	height:35px;
+}
+.m-schbar .m-sch:last-child{
+	border-bottom:none;
+}
+.m-schbar .m-sch.secondLine{
+	margin-left:40px;
+	padding-bottom:0;
+	border-bottom:none;
+}
+.m-schbar .m-sch.secondLine.j-postFlag >label{
+	width:50px;
+}
+.m-schbar .m-sch.secondLine.j-postFlag >.searchVals{
+	margin-left:50px;
+}
+.m-schbar .m-sch.thirdLine{
+	padding-bottom:0;
+	border-bottom:none;
+}
+.m-schbar .m-sch.positionType .m-sch .searchVals{
+	margin-left:50px;
+}
+.m-schbar .m-sch.positionType .m-sch label{
+	width:60px;
+}
+.m-schbar .m-sch .searchItem{
+	float:left;
+	margin-right:50px;
+}
+.m-schbar .m-sch .searchItem:last-child{
+	margin-right:0;
+}
+.m-schbar .m-sch .u-ipt{
+	width:370px;
+	line-height:16px;
+}
+.m-schbar .m-sch label{
+	float:left;
+	height:20px;
+	line-height:25px;
+	width:80px;
+	text-align:right;
+}
+.m-schbar .m-sch .searchVals{
+	margin-left:80px;
+}
+.m-schbar .m-sch .searchVals label{
+	line-height:28px;
+}
+.m-schbar .m-sch .m-crumb,.m-schbar .m-sch .crumbDrop{
+	border-radius:2px;
+	border:1px solid #c32b2b;
+	padding:1px 7px;
+	height:22px;
+	line-height:22px;
+	display:inline-block;
+}
+.m-schbar .m-sch .m-crumb i,.m-schbar .m-sch .crumbDrop i{
+	color:#c32b2b;
+	cursor:pointer;
+}
+.m-schbar .m-sch .m-crumb .label,.m-schbar .m-sch .crumbDrop .label{
+	display:inline-block;
+	background-color:#f7e7e7;
+	border-right:1px solid #c22b2b;
+	padding:0px 7px;
+}
+.m-schbar .m-sch .crumbDrop{
+	padding-left:0;
+}
+.m-schbar .m-sch .crumbDrop i,.m-schbar .m-sch .crumbDrop span{
+	float:left;
+}
+.m-schbar .m-sch .crumbDrop .cnt{
+	max-width:130px;
+	margin:0 5px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.m-schbar .m-sch .selectedSearch li{
+	float:left;
+	margin-right:10px;
+	margin-bottom:8px;
+}
+.m-schbar .m-sch .moreLink{
+	position:absolute;
+	right:40px;
+	top:17px;
+	color:#999;
+}
+.m-schbar .resumeSearch .u-ipt{
+	width:120px;
+}
+.m-schbar .resumeTagBtn{
+	display:inline-block;
+	width:145px;
+	padding:0 5px;
+	line-height:22px;
+	border:1px solid #ddd;
+	text-align:center;
+	background:#fff;
+	cursor:pointer;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+.u-ipt{
+	line-height:14px;
+	padding:5px;
+	border-width:1px;
+	border-style:solid;
+	border-color:#ccc #ddd #ddd #ccc;
+}
+.u-ipt:focus,.u-ipt .u-ipt-crt{
+	border-color:#aaa #bbb #bbb #aaa;
+}
+.u-ipt[disabled="disabled"]{
+	background:#f8f8f8;
+}
+.u-ipt[disabled="true"]{
+	background:#f8f8f8;
+}
+.u-btn-search{
+	height:28px;
+	background-color:#77767c;
+	font-size:15px;
+	line-height:16px;
+	border:1px solid #77767c;
+	color:#fff;
+	padding:5px 10px;
+}
+
+.schOptions li{
+	float:left;
+	height:22px;
+	line-height:22px;
+	padding:1px 7px;
+	cursor:pointer;
+}
+.schOptions li.selected{
+	background:#c32b2b;
+	border-radius:5px;
+	color:#fff;
+}
+.schOptions li.selected a{
+	color:#fff;
+}
+.schOptions li a{
+	color:#806f66;
+	display:inline-block;
+	line-height:20px;
+	height:20px;
+	white-space:nowrap;
+}

@@ -1,0 +1,206 @@
+<div class="upload">
+    <div  class="upload-h">
+        {detail.positionName}
+        <div class="h-detail">
+            <span>职位类别：<span class="child">{detail.positionTypeName}</span></span>
+            <span>工作地点：<span class="child">{detail.workPlaceName}</span></span>
+            <span>工作年限：<span class="child">{detail.workYearsName}</span></span>
+        </div>
+    </div>
+    <div class="upload-c" >
+        <div class="c-left">
+            <div on-click={this.switchMoudel({uploadFile:'true'})} class={uploadFile==='true'?'left-tab-live':'left-tab'}>
+                上传新简历
+                <div class="live"></div>
+            </div>
+            <div on-click={this.switchMoudel({selectFile:'true'})} class={selectFile==='true'?'left-tab-live':'left-tab'}>
+                选择已有简历
+                <div class="live"></div>
+            </div>
+        </div>
+        <div class="c-right"  r-hide={!(uploadFile=='true')}>
+            <div class="right-frist">
+                <label>
+                    <span class="red">*</span>
+                    <span class="name ">姓<span class="blank"></span>名:</span>
+                    <input type="text"  r-model={form1Data.appName}>
+                </label>
+                <label style="margin-top:30px; height: 17px; ">
+                    <span class="red">*</span>
+                    <span class="name" >性<span class="blank"></span>别:</span>
+                    <input type="radio" r-model={form1Data.gender} class="radio" value="0" name="gender">男<span class="blank"></span>
+                    <input type="radio" r-model={form1Data.gender} class="radio" value="1" name="gender">女
+                </label>
+                <label style="margin-top:30px; ">
+                    <span class="red">*</span>
+                    <span class="name ">手<span class="blank2"></span>机<span class="blank2"></span>号<span class="blank2"></span>码:</span>
+                    <input type="text" r-model={form1Data.mobile} on-blur={this.control(form1Data.mobile,'mobile')}>
+                    {#if errData['mobile']==1}
+                        <span class="red">填写错误！</span>
+                    {/if}
+                </label>
+                <label style="margin-top:20px;">
+                    <span class="red">*</span>
+                    <span class="name">电 <span class="blank2"></span>子<span class="blank2"></span>邮<span class="blank2"></span>箱:</span>
+                    <input type="text" r-model={form1Data.email} on-blur={this.control(form1Data.email,'email')}>
+                    {#if errData['email']==1}
+                    <span class="red">填写错误！</span>
+                    {/if}
+                </label>
+            </div>
+            <div class="right-second">
+                <label style="margin-top:27px;">
+                    <span class="red">*</span>
+                    <span class="name" style="letter-spacing: 2.5px;">参加工作年月:</span>
+                    <select class="select1" r-model={work.Year}>
+                        <option value="">请选择</option>
+                        {#list yearsArray as item}
+                            <option value={item}>{item}年</option>
+                        {/list}
+                    </select>
+
+                    <select class="select2" r-model={work.Month}>
+                        <option value="">请选择</option>
+                        {#list monthsArray as item}
+                            <option value={item}>{item}月</option>
+                        {/list}
+                    </select>
+
+                </label>
+                <label style="margin-top:20px;">
+                    <span class="red">*</span>
+                    <span class="name">最<span class="blank2"></span>高<span class="blank2"></span>学<span class="blank2"></span>历:</span>
+                    <select class="select1" r-model={form1Data.topDegree}>
+                        <option value="">请选择学历</option>
+                        {#list degree as item}
+                            <option value={item.id}>{item.name}</option>
+                        {/list}
+                    </select>
+                </label>
+                <label style="margin-top:20px;">
+                    <span class="red">*</span>
+                    <span class="name" >目<span class="blank2"></span>前<span class="blank2"></span>工<span class="blank2"></span>司:</span>
+                    <input type="text" r-model={form1Data.nowCompany}>
+                    <a class="icon">
+                        <span>
+                            若已离职，可填写最近一份工作情况
+                        </span>
+                    </a>
+                </label>
+                <label style="margin-top:40px;">
+                    <span class="red">*</span>
+                    <span class="name">目<span class="blank2"></span>前<span class="blank2"></span>职<span class="blank2"></span>位:</span>
+                    <input type="text" r-model={form1Data.nowPosition}>
+                </label>
+            </div>
+            <div class="right-third f-cb f-pr" >
+                <label style="margin-top:40px;">
+                    <span class="red">*</span>
+                    <span class="name">简<span class="blank2"></span>历<span class="blank2"></span>附<span class="blank2"></span>件:</span>
+                    <form  class='info-form' ref="form"  action="/file/upload" enctype="multipart/form-data" method="post">
+
+                                {#if filename}
+                                    <div class="f-pr" style="text-indent: 10px">
+                                        {filename}
+                                    </div>
+                                {#else}
+                                    <div class="f-pr" style="margin-left:10px;">
+                                        <input type="file" name='file' on-change={this.__uploadFile($event)} />
+
+                                        <div class="upload-file">
+                                                <div class="button-up">
+                                                    选择
+                                                </div>
+                                        </div>
+                                    </div>
+
+                        {/if}
+                    </form>
+                </label>
+                <span class="reminder">
+                    文件需小于20M，可上传doc、docx、pdf、jpg、gif、png、jpeg格式
+                </span>
+                    {#if form1button=='true'}
+                        <span class="submit"  on-click={this.submitIntab1()}>
+
+                            我要推荐
+                        </span>
+                    {#else}
+                        <span class="submit graybutton"  on-click={this.submitIntab1()}>
+
+                            我要推荐
+                        </span>
+                    {/if}
+            </div>
+        </div>
+
+        <div class="c-right"   r-hide={!(selectFile=='true')}>
+            <div class="right-frist">
+                <label class="f-pr">
+                    <span class="red">*</span>
+                    <span class="name ">被<span class="blank2"></span>推<span class="blank2"></span>荐<span class="blank2"></span>人:</span>
+                    <span class="nameNow">{currentResume.appName}</span>
+                    <span class="button small" on-click={this.selectHaveFile()} >
+                        选择简历
+                    </span>
+                    <span class="reminder">
+                         注：同一个人一次只能被推荐到一个职位，若应聘失败，在该候选人的猎头保护期内可重新推荐
+                    </span>
+                </label>
+                <label style="margin-top:60px; height: 17px; ">
+                    <span class="red">*</span>
+                    <span class="name ">性<span class="blank"></span>别:</span>
+                    <span >{#if currentResume.gender==0}男{#elseif currentResume.gender==1}女{/if}</span>
+                </label>
+                <label style="margin-top:30px; ">
+                    <span class="red">*</span>
+                    <span class="name ">手<span class="blank2"></span>机<span class="blank2"></span>号<span class="blank2"></span>码:</span>
+                    <span >{currentResume.mobile}</span>
+                </label>
+                <label style="margin-top:10px; ">
+                    <span class="red">*</span>
+                    <span class="name ">电<span class="blank2"></span>子<span class="blank2"></span>邮<span class="blank2"></span>箱:</span>
+                    <span >{currentResume.email}</span>
+                </label>
+            </div>
+            <div class="right-second">
+                <label style="margin-top:20px;">
+                    <span class="red">*</span>
+                    <span class="name" style="letter-spacing: 2.6px;">参加工作年月:</span>
+                    <span >{currentResume.workYearStr}</span>
+                </label>
+                <label style="margin-top:20px;">
+                    <span class="red">*</span>
+                    <span class="name">最<span class="blank2"></span>高<span class="blank2"></span>学<span class="blank2"></span>历:</span>
+                    <span >{currentResume.degreeStr}</span>
+                </label>
+                <label style="margin-top:20px;">
+                    <span class="red">*</span>
+                    <span class="name">目<span class="blank2"></span>前<span class="blank2"></span>工<span class="blank2"></span>司:</span>
+                    <span >{currentResume.nowCompany}</span>
+                </label>
+                <label style="margin-top:20px;">
+                    <span class="red">*</span>
+                    <span class="name">目<span class="blank2"></span>前<span class="blank2"></span>职<span class="blank2"></span>位:</span>
+                    <span >{currentResume.nowPosition}</span>
+                </label>
+            </div>
+            <div class="right-third f-cb f-pr">
+                <label style="margin-top:40px;">
+                    <span class="red">*</span>
+                    <span class="name">简<span class="blank2"></span>历<span class="blank2"></span>附<span class="blank2"></span>件:</span>
+                    <span style="margin-left: 10px;">{currentResume.appendixName}</span>
+                </label>
+                {#if currentResume.appName}
+                    <span class="submit" on-click={this.submitIntab2()}>
+                        我要推荐
+                    </span>
+                {#else}
+                    <span class="submit graybutton">
+                        我要推荐
+                    </span>
+                {/if}
+            </div>
+        </div>
+    </div>
+</div>

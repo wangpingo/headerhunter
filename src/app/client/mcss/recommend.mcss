@@ -1,0 +1,14 @@
+ //用的 home的 css 样式; 这个页面 css省略
+
+.reminder-email{
+    position:absolute;
+    background:url('../img/rem-email.png');
+    width:200px;
+    height:30px;
+    line-height:33px;
+    font-size:$fontsize-base;
+    text-align:center;
+    right: 126px;
+    top: 44px;
+    z-index:99;
+}

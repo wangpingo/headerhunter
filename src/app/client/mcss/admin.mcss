@@ -1,0 +1,234 @@
+.m-admin{
+    width:1080px;
+    margin:30 auto;
+    min-height:800px;
+    overflow:hidden;
+
+    $span=($height){
+        span{
+            display:inline-block;
+            height:$height;
+            line-height:$height;
+            &.span214{
+                width:214px;
+                text-indent:$height;
+            }
+            &.span124{
+                width:124px;
+                text-align:center;
+                position:relative;
+                .arrowDown{
+                    background-image:url('../img/white-arrowDown.png');
+                    width:12px;
+                    height:6px;
+                    background-position:center center;
+                    margin-left:7px;
+                    margin-bottom:2px;
+                }
+                .arrowUp{
+                    background-image:url('../img/white-arrowUp.png');
+                    width:12px;
+                    height:6px;
+                    background-position:center center;
+                    margin-left:7px;
+                    margin-bottom:2px;
+                }
+                .status-frame{
+                    position:absolute;
+                    z-index:999;
+                    line-height:normal;
+                    text-align:left;
+                    background:#fefefe;
+                    border:1px solid #d4d4d4;
+                    width:87px;
+                    height:81px;
+                    padding:10px 17px 15px 17px;
+                    left:0px;
+                    top:40px;
+                    label{
+                        width:89px;
+                        height:20px;
+                        font-size:12px;
+                        color:$font-color;
+                        line-height:30px;
+                        text-align:left;
+                        input{
+                            vertical-align:middle;
+                            margin-right:5px;
+                        }
+                        a{
+                            color:#ccc;
+                        }
+                    }
+                }
+            }
+            &.span510{
+                width:510px;
+                text-indent:53px;
+            }
+            &.span220{
+                width:220px;
+                .span-left{
+                    width:40px;
+                    background:none;
+                    padding:0;
+                    margin:0;
+                }
+                .span-right{
+                    width:40px;
+                    background:none;
+                    padding:0;
+                    margin:0px;
+                    &.click-red{
+                        padding:7px;
+                        background-color:$div-red;
+                        color:$font-inRedColor;
+                    }
+                }
+            }
+        }
+    }
+    .adm-content{
+        width:1080px;
+        height:66px;
+        background:$div-color;
+        $span(66px);
+        a{
+           background:#f4f4f4;
+           padding:5px 14px 5px 14px;
+           margin-right:10px;
+           border-radius:4px;
+        }
+        .arrowDown{
+            display:inline-block;
+            background-image:url('../img/gray-arrow.png');
+            background-repeat:no-repeat;
+            width:24px;
+            height:24px;
+            background-position:center center;
+            background-size:12px 6px;
+            background-color:#f4f4f4;
+            margin-bottom:-6px;
+        }
+    }
+    .adm-thead{
+        margin-top:30px;
+        width:1080px;
+        height:40px;
+        background:$div-red;
+        color:$font-inRedColor;
+        $span(40px);
+    }
+    .adm-header{
+        width:1080px;
+        height:80px;
+        background:#ffffff;
+        box-shadow:0 2px 4px 0 rgba(0,0,0,0.06);
+        .header-left{
+            display:inline-block;
+            width:580px;
+            height:80px;
+            padding:0 0 0 40px;
+            .header-title{
+                display:inline-block;
+                width:80px;
+                line-height:80px;
+                font-size:20px;
+            }
+            .header-num{
+                display:inline-block;
+                width:110px;
+                margin-left:20px;
+                line-height:80px;
+                font-size:16px;
+                a{
+                    color:$div-red;
+                }
+            }
+
+        }
+        .header-right{
+            display:inline-block;
+            position:absolute;
+            padding:22px 0px;
+            top:0px;
+            width:450px;
+            height:36px;
+            .right-search{
+                display:inline-block;
+                width:300px;
+                height:36px;
+                input{
+                    border:1px solid #d4d4d4;
+                    border-radius:4px;
+                    width:298px;
+                    height:34px;
+                    text-indent:37px;
+                }
+                .search-btn{
+                    position:absolute;
+                    display:inline-block;
+                    width:65px;
+                    height:34px;
+                    left:232px;
+                    background:#ccc;
+                    border-radius:4px;
+                    line-height:34px;
+                    text-align:center;
+                }
+                .search-icon{
+                    position:absolute;
+                    display:inline-block;
+                    width:37px;
+                    height:34px;
+                    left:0px;
+                    top:22px;
+                    background:url('../img/search-icon.png') no-repeat;
+                    background-position:center center;
+                }
+            }
+            .right-addHunter{
+                position:absolute;
+                display:inline-block;
+                background:#c62623;
+                right:20px;
+                border-radius:4px;
+                width:110px;
+                height:34px;
+                color:$font-inRedColor;
+                line-height:34px;
+                text-align:center;
+                .addHunter-icon{
+                    display:inline-block;
+                    vertical-align:middle;
+                    width:14px;
+                    height:14px;
+                    background:url('../img/addIcon.png') no-repeat;
+                    background-position:center center;
+                }
+            }
+        }
+
+    }
+    .green{
+        color:#34a53e;
+    }
+
+    .red{
+        color:#c62623;
+    }
+    .line{
+        width:1080px;
+        height:1px;
+        background:#d4d4d4;
+    }
+    .adm-bottom{
+        width:1020px;
+        height:50px;
+        padding:30px;
+    }
+    .span124-active{
+        background:#aa1b18;
+    }
+}
+

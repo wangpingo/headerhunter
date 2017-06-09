@@ -1,0 +1,38 @@
+<div class="m-home">
+    <div class="home" >
+        <div class="home-content " style="margin-top: 30px;">
+            <div class="h-c-header">
+                <span class="first-span rem-first-span">推荐职位</span>
+                <span class="rem-span">候选人姓名</span>
+                <span class="rem-span">推荐时间</span>
+                <span class="rem-span">招聘负责人</span>
+                <span class="rem-span">最新状态</span>
+            </div>
+            {#list recommendList as item}
+            <div class="h-c-position f-pr">
+                        <span class="first-span rem-f-span">
+                            <a href={"#/detail?id="+item.id} target="_blank">{item.positionName}</a>
+                        </span>
+                <span class="rem-span">
+                        {item.appName}
+                </span>
+                <span class="rem-span">{item.updateTimeStr}</span>
+                <span class="rem-span" style="position: relative;">
+
+                    <a on-mouseover={this.showIcon(item_index,true)} on-mouseout={this.showIcon(item_index,fasle)}>
+                            {item.postionUserName}
+                    </a>
+                </span>
+                <span class="rem-span">{item.statusName}</span>
+                <div class="reminder-email" r-hide={!arrowStatus[item_index]}>{item.email}</div>
+            </div>
+            {/list}
+
+        </div>
+        <div class="home-page">
+            {#if pages.totalPage}
+            <pager total={pages.totalPage} current={page} ></pager>
+            {/if}
+        </div>
+    </div>
+</div>

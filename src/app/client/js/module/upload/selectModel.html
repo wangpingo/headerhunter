@@ -1,0 +1,27 @@
+
+<div class="s-m-header">
+    <input class="h-inp"  placeholder="请输入姓名" r-model={appName}/>
+    <span class="h-search" on-click={this.getResume(appName,1)}>搜索</span>
+</div>
+<div class="s-m-content">
+    <div class="f-cb">
+        <div class="con-head">
+            <span class="span85 mar">姓名</span>
+            <span class="span85">性别</span>
+            <span class="span130">手机号码</span>
+            <span class="span200">电子邮箱</span>
+            <span class="span270">目前公司</span>
+        </div>
+        {#list resume as item}
+            <div class="con-li " on-click={this.resume(item)}>
+                <span class="span85 mar">{item.appName}</span>
+                <span class="span85">{#if item.gender==0}男{#else}女{/if}</span>
+                <span class="span130">{item.mobile}</span>
+                <span class="span200">{item.email}</span>
+                <span class="span270">{item.nowCompany}</span>
+            </div>
+        {/list}
+    </div>
+    <div class="blank"></div>
+    <pager total={page.totalPage} current={currentPage}></pager>
+</div>

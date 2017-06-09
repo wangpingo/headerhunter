@@ -1,0 +1,130 @@
+<div class="m-home">
+    <div class="home" >
+        <div class="home-search" >
+            <div class="search-line">
+                <span class="search-icon"></span>
+                <input class="search-input" r-model={searchValue} placeholder="请输入职位关键词"/>
+            </div>
+
+            <span class="search-button"  on-click={this.searchButton()}>搜索</span>
+        </div>
+        <div class="home-header">
+            <div class="select-options">
+                <span>工作地点：</span>
+                {#if workPlaceList}
+                    {#list workPlaceList as item}
+                        <span on-click={this.clickOption('workPlaceListFlag',item_index)} class={flags.workPlaceListFlag[item_index]==true?'live':''}>{workPlaceListFlag[item_index]==true?'live':''}{item.name}</span>
+                    {/list}
+                {/if}
+            </div>
+            <div class="select-options">
+                <span>工作年限：</span>
+                {#if workPlaceList}
+                    {#list workYearsList as item}
+                        <span on-click={this.clickOption('workYearsListFlag',item_index)} class={flags.workYearsListFlag[item_index]==true?'live':''}>{item.name}</span>
+                    {/list}
+                {/if}
+            </div>
+            <div class="select-options special">
+                <span>职位类别：</span>
+                {#if workPlaceList}
+                    {#list positionTypeList as item}
+                        <span on-click={this.clickOption('positionTypeListFlag',item_index)} class={flags.positionTypeListFlag[item_index]==true?'live':''}>{item.name}</span>
+                    {/list}
+                {/if}
+            </div>
+        </div>
+        <div class="header-select">
+            <span><i class="job"></i> 招聘负责人
+                <select r-model={queryObj.postionUserId}>
+                        <option >请选择</option>
+                    {#list hrList as item}
+                        <option value={item.id}>{item.name}</option>
+                    {/list}
+                </select>
+            </span>
+            <span><i class="houses"></i> 职位所在部门
+                <select r-model={queryObj.positionDepId}>
+                    <option >请选择</option>
+                    {#list departmentList as item}
+                        <option value={item.id}>{item.name}</option>
+                    {/list}
+                </select>
+            </span>
+            <span><i class="time"></i> 职位状态
+                <select r-model={queryObj.positionName}>
+                    <option >请选择</option>
+                    <option value=0> 发布中</option>
+                    <option value=1> 禁用中</option>
+                </select>
+            </span>
+        </div>
+        <div class="home-content" >
+            <div class="h-c-header">
+                <span class="first-span">职位名称</span>
+                <span>职位状态</span>
+                <span>职位类别</span>
+                <span>工作地点</span>
+                <span>工作年限</span>
+                <span>最低学历</span>
+                <span>招聘人数</span>
+                <span>更新日期</span>
+            </div>
+
+            {#if positionList}
+                {#list positionList as item}
+                    <div class="h-c-position f-pr {item.positionStatus==0?'':'gray'}">
+                        <span class="first-span">
+                            <a href={"#/detail?id="+item.d} target="_blank">{item.positionName}</a>
+                        </span>
+                        <span class= {item.positionStatus==0?'live':''}>{item.positionStatus==0?'发布中':'已暂停'}</span>
+                        <span>{item.positionTypeName}</span>
+                        <span>{item.workPlaceName}</span>
+                        <span>{item.workYearsName}</span>
+                        <span>{item.topDegreeName}</span>
+                        <span>{item.hireNum}</span>
+                        <span>{item.updateDate}</span>
+                        {#if item.positionStatus==1}
+                            <a class="icon arrowDown"></a>
+                        {#else}
+                            <a class="icon {arrowStatus[item_index]==true?'arrowUp':'arrowDown'}" on-click={this.setArrow(item_index)}></a>
+                        {/if}
+                    </div>
+                    <div  r-hide={!arrowStatus[item_index]} class="h-c-deatil">
+                        <div class="detail-dec">
+                                <span class="dec-header">岗 位 描 述</span>
+                                <p r-html={item.positionDsc}>
+
+                                </p>
+                        </div>
+
+                        <div class="detail-req">
+                                <span class="req-header">岗 位 要 求</span>
+                                <p r-html={item.positionReq}>
+
+                                </p>
+                        </div>
+                        <div class="deatil-footer">
+                            <span class="button" on-click={this.recommend(item.id)}>
+                                我要推荐
+                            </span>
+                            <div class="footer-mail .f-cb">
+                                <span class="mail-title">招聘负责人:</span>
+                                <span class="mail-person">
+                                    {#list item.postionUserNameList as item}
+                                        {item.name} | {item.email}<br>
+                                    {/list}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                {/list}
+            {/if}
+        </div>
+        <div class="home-page">
+            {#if page.totalPage}
+            <pager total={page.totalPage} current={queryObj.currentPage} ></pager>
+            {/if}
+        </div>
+    </div>
+</div>
